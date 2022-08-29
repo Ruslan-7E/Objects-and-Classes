@@ -1,9 +1,21 @@
 package ObjectsAndClasses;
 
 public class Author {
-    private String name1 = "Даниэль";
-    private String surname1 = "Дефо";
-    private String name2 = "Даниэль";
-    private String surname2 = "Киз";
-    // также, не знаю, все ли поля объявил правильно
+    private String name;
+    private String surname;
+
+    public Author(String name, String surname) {
+        this.name = name;
+        this.surname = surname;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
+    // после разбора с наставником
 }
