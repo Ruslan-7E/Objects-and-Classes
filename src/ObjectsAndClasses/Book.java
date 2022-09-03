@@ -1,5 +1,8 @@
 package ObjectsAndClasses;
 
+import java.util.Objects;
+
+
 public class Book {
     private String bookName;
     private Author author;
@@ -27,6 +30,21 @@ public class Book {
         this.pubYear = pubYear;
     }
 
-    // после разбора с наставником
+    // object methods base task below
+//    public String toString() {
+//        return "Book name is: " + this.bookName + " and publishing year is: " + this.pubYear;
+//    }
+
+    public int hashCode() {
+        return java.util.Objects.hash(this.bookName);
+    }
+
+    public boolean equals(Object obj) {
+        if (this.getClass() != obj.getClass()) {
+            return false;
+        }
+        Book book1 = (Book) obj;
+        return super.equals(obj);
+    }
 
 }

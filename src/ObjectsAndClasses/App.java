@@ -16,5 +16,18 @@ public class App {
         System.out.println("Название книги: " + book1.getBookName() + " год издания: " + book1.getPubYear() + " автор: " + book1.getAuthor().getName() + " " + book1.getAuthor().getSurname());
         System.out.println("Название книги: " + book2.getBookName() + " год издания: " + book2.getPubYear() + " автор: " + book2.getAuthor().getName() + " " + book2.getAuthor().getSurname());
 
+        // object methods base task below
+
+        // toString() realization
+        System.out.println(book1);
+        System.out.println(author2);
+
+        // hashCode() realization
+        System.out.println(book1);
+        System.out.println(book1);
+
+        // equals() realization
+        System.out.println(author1.equals(author2));
+        System.out.println(book1.equals(book2));
     }
 }
