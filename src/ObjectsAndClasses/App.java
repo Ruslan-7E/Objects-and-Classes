@@ -20,14 +20,15 @@ public class App {
 
         // toString() realization
         System.out.println(book1);
-        System.out.println(author2);
+        System.out.println(book2);
 
         // hashCode() realization
-        System.out.println(book1);
-        System.out.println(book1);
+        System.out.println(author1.hashCode() == author2.hashCode());
+        System.out.println(book1.hashCode() == book2.hashCode());
 
         // equals() realization
-        System.out.println(author1.equals(author2));
         System.out.println(book1.equals(book2));
+        System.out.println(author1.equals(author2));
+
     }
 }

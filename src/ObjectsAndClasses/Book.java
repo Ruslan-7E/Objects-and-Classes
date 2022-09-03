@@ -30,21 +30,25 @@ public class Book {
         this.pubYear = pubYear;
     }
 
-    // object methods base task below
-//    public String toString() {
-//        return "Book name is: " + this.bookName + " and publishing year is: " + this.pubYear;
-//    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Book book = (Book) o;
+        return pubYear == book.pubYear && Objects.equals(bookName, book.bookName) && Objects.equals(author, book.author);
+    }
 
+    @Override
     public int hashCode() {
-        return java.util.Objects.hash(this.bookName);
+        return Objects.hash(bookName, author, pubYear);
     }
 
-    public boolean equals(Object obj) {
-        if (this.getClass() != obj.getClass()) {
-            return false;
-        }
-        Book book1 = (Book) obj;
-        return super.equals(obj);
+    @Override
+    public String toString() {
+        return "Book{" +
+                "bookName='" + bookName + '\'' +
+                ", author=" + author +
+                ", pubYear=" + pubYear +
+                '}';
     }
-
 }

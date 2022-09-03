@@ -20,20 +20,24 @@ public class Author {
         return surname;
     }
 
-    // object methods base task below
-//    public String toString() {
-//        return "The author of this book is: " + this.name + " " + this.surname;
-//    }
-    public int hashCode() {
-        return java.util.Objects.hash(this.surname);
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Author author = (Author) o;
+        return Objects.equals(name, author.name) && Objects.equals(surname, author.surname);
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this.getClass() != obj.getClass()) {
-            return false;
-        }
-        Author author1 = (Author) obj;
-        return super.equals(obj);
+    public int hashCode() {
+        return Objects.hash(name, surname);
+    }
+
+    @Override
+    public String toString() {
+        return "Author{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                '}';
     }
 }
